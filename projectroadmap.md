@@ -1,5 +1,26 @@
-1) Setup user interface
-2) Setup question and answer for the user
-3) Calculate the result
-4) Output the push-up number that the user need to complete
-5) If not complete, there will be penalty
+##Project Roadmap
+1) Setup user interface [Done]
+2) Setup question and answer for the user [Done]
+3) Calculate the result [Done]
+4) Output the push-up number that the user need to complete [Done]
+5) If not complete, there will be penalty [Not Done]
+
+## Week 1
+- Questions for the user [x]
+- Code the questions into python [x]
+- Calculate the result for the user [x]
+
+## Week 2
+- Learn the basic of GUI [x]
+- Add text box [x]
+- Add buttons [x]
+- GUI color []
+- fix error [x]
+
+## Week 3
+- Connect everything together [x]
+- Add music []
+- Add picture []
+
+## Week 4
+- Thankgiving
