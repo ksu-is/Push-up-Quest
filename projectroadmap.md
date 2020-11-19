@@ -1,4 +1,4 @@
-##Project Roadmap
+## Project Roadmap
 1) Setup user interface [Done]
 2) Setup question and answer for the user [Done]
 3) Calculate the result [Done]
@@ -25,7 +25,7 @@
 ## Week 4
 - Thankgiving
 
-Research and Tutorials
+## Research and Tutorials
 create user input in GUI
 -https://www.youtube.com/watch?v=7A_csP9drJw
 learn to create GUI
