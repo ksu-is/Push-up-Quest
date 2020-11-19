@@ -24,3 +24,15 @@
 
 ## Week 4
 - Thankgiving
+
+Research and Tutorials
+create user input in GUI
+-https://www.youtube.com/watch?v=7A_csP9drJw
+learn to create GUI
+-https://www.youtube.com/watch?v=yQSEXcf6s2I
+create button in GUI
+-https://www.youtube.com/watch?v=yuuDJ3-EdNQ
+research about push-up
+-https://gasparinutrition.com/blogs/fitness-facts/how-many-pushups-should-i-be-able-to-do
+data from push-up
+-https://strengthlevel.com/strength-standards/push-ups/lb
