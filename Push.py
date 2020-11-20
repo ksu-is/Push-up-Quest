@@ -1,4 +1,4 @@
-from tkinter import *
+from tkinter import Tk, END, Entry, Label, StringVar, INSERT, Button, Text
 
 window = Tk()
 window.title("Push-up Quest")
@@ -7,7 +7,7 @@ window.title("Push-up Quest")
 question = Label(window, text="Name")
 question.grid(row=0,column=0)
 
-question = Label(window, text="Gender (M/F)")
+question = Label(window, text="Sex (M/F)")
 question.grid(row=0,column=2)
 
 question = Label(window, text="Age")
@@ -40,9 +40,8 @@ answer4.grid(row=1, column=3)
 box1 = Text(window, height=6, width=40, borderwidth=3)
 box1.grid(row=2, column=0, rowspan=6, columnspan=2)
 
-
-
 def Calculate():
+
     box1.delete('1.0', END)
     box1.insert(INSERT,"\n"+"Hello " + str(name_text.get()))
     pushup_calorie = 0.36
@@ -194,6 +193,7 @@ def Calculate():
     
 
     def Done():
+
         push1 = str(pushups_done * pushup_calorie)
         box1.insert(INSERT,"\n" + "\n" + "Total calorie burn: " + push1)
 
@@ -210,6 +210,5 @@ button1.grid(row=3, column=3)
 
 button3 = Button(window,text="Close", width=12, command=Close)
 button3.grid(row=5, column=3)
-
 
 window.mainloop()
