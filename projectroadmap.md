@@ -19,7 +19,7 @@
 
 ## Week 3
 - Connect everything together [x]
-- Add music []
+- Add music [Cancel]
 - Add picture []
 
 ## Week 4
