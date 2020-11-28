@@ -24,6 +24,8 @@
 
 ## Week 4
 - Thankgiving
+- Add Video [x]
+- Make listbox for video [x]
 
 ## Research and Tutorials
 - create user input in GUI https://www.youtube.com/watch?v=7A_csP9drJw
