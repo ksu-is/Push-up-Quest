@@ -20,7 +20,7 @@
 ## Week 3
 - Connect everything together [x]
 - Add music [Cancel]
-- Add picture []
+- Add picture [Cancel]
 
 ## Week 4
 - Thankgiving
