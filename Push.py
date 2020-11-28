@@ -1,19 +1,20 @@
-from tkinter import Tk, END, Entry, Label, StringVar, INSERT, Button, Text
+from tkinter import Tk, END, Entry, Label, StringVar, INSERT, Button, Text, Listbox
+import os, glob
 
 window = Tk()
 window.title("Push-up Quest")
 
 #Question for user
-question = Label(window, text="Name")
+question = Label(window, text="Name", font=("Helvetica",10))
 question.grid(row=0,column=0)
 
-question = Label(window, text="Sex (M/F)")
+question = Label(window, text="Sex (M/F)", font=("Helvetica",10))
 question.grid(row=0,column=2)
 
-question = Label(window, text="Age")
+question = Label(window, text="Age", font=("Helvetica",10))
 question.grid(row=1,column=0)
 
-question = Label(window, text="Weight")
+question = Label(window, text="Weight", font=("Helvetica",10))
 question.grid(row=1,column=2)
 
 #User input here
@@ -40,14 +41,50 @@ answer4.grid(row=1, column=3)
 box1 = Text(window, height=6, width=40, borderwidth=3)
 box1.grid(row=2, column=0, rowspan=6, columnspan=2)
 
+#Video
+question = Label(window, text="Tutorial Video (Double-Click to watch)          ", font=("Helvetica",11))
+question.grid(row=8,column=1)
+
+
+listbox = Listbox(window, height=5, width=40, borderwidth=3, background="black", foreground="white")
+listbox.grid(row=9, column=0, rowspan=6, columnspan=2)
+
+def start_video(event):
+    ind = listbox.curselection()
+    movie_name = listbox.get(ind)
+    os.startfile(movie_name)
+
+mp4 = glob.glob("*mp4")
+for movie in mp4:
+    listbox.insert(END, movie)
+listbox.bind("<Double-Button>", start_video)
+
+
+
 def Calculate():
 
     box1.delete('1.0', END)
     box1.insert(INSERT,"\n"+"Hello " + str(name_text.get()))
-    pushup_calorie = 0.36
 
-    if str(gender_text.get()) == "M":
+    #test user input
+    try:
+        int(age_text.get())
+    except ValueError:
+        box1.insert(INSERT,"\n" + "Your age is NOT a number!")
         
+    try:
+        float(weight_text.get())
+    except ValueError:
+        box1.insert(INSERT,"\n" + "Your weight is NOT a number!")
+
+    try:
+        gender_text.get() == "F" and gender_text.get() == "M"
+    except ValueError:
+        box1.insert(INSERT,"\n" + "Use (M/F) for your gender!")
+
+
+    if str(gender_text.get()) == "M" and int(age_text.get()) and float(weight_text.get()):
+
         if int(age_text.get()) < 18:
             if int(weight_text.get()) < 140:
                 pushups_done = 26
@@ -117,7 +154,7 @@ def Calculate():
         else:
             box1.insert(INSERT,"\n" + "Your too old for this quest")
         
-    elif str(gender_text.get()) == "F":
+    elif str(gender_text.get()) == "F" and int(age_text.get()) and float(weight_text.get()):
 
         if int(age_text.get()) < 18:
             if int(weight_text.get()) < 120:
@@ -189,13 +226,13 @@ def Calculate():
             box1.insert(INSERT,"\n" + "Your too old for this quest" )
         
     else:
-        box1.insert(INSERT,"\n" + "Please fill the box." )
+        box1.insert(INSERT,"\n" + "\n" + "[Please fill all the box]" )
     
 
     def Done():
-
+        pushup_calorie = 0.36
         push1 = str(pushups_done * pushup_calorie)
-        box1.insert(INSERT,"\n" + "\n" + "Total calorie burn: " + push1)
+        box1.insert(INSERT,"\n" + "\n" + "Total calorie burn today: " + push1)
 
 
     button2 = Button(window,text="Quest Done?", width=12, command=Done)
